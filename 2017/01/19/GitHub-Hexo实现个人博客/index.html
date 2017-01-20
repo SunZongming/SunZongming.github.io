@@ -19,7 +19,7 @@
 
 下面开始进行安装！">
 <meta property="og:image" content="http://ohm8no9mq.bkt.clouddn.com/hexo+gitHub.png">
-<meta property="og:updated_time" content="2017-01-20T02:42:35.822Z">
+<meta property="og:updated_time" content="2017-01-20T03:49:32.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo实现个人博客">
 <meta name="twitter:description" content="首先，感谢徐俊的博客，是他让我开始对本系统的探索，另外，感谢郭霖的推送。
@@ -231,7 +231,25 @@ npm install
 hexo server
 启动hexo本地服务，可打开localhost:3000 进行查看
 </code></pre><p>通过上面几步就可以在当前目录下生成一个文件夹blog，这个文件夹下面存放的就是hexo的工作文件。</p>
-
+<p>通过</p>
+<pre><code>hexo new &quot;newBlog&quot;
+</code></pre><p>创建一个名称为newBlog的页面，在<code>./source/_posts</code>下可以看到名为<code>newBlog.md</code>的markdown文档，接下来就是用<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">markdown</a>写博客了。</p>
+<p>文章写好后，就可以通过</p>
+<pre><code>hexo g
+</code></pre><p>生成静态web页面。</p>
+<p>到目前为止，hexo的操作基本上就只有这些，接下来进行git的配置。</p>
+<pre><code>git config --global user.name &quot;YourName&quot;
+git config --global user.email &quot;YourEmail&quot;
+</code></pre><p>除了上面的两条命令，还需要生成密钥，通过下面的命令</p>
+<pre><code>ssh-keygen -t rsa -C &quot;YourEmail&quot;
+</code></pre><p>生成完之后就要使用了，打开密钥所在目录，用记事本打开<code>id_rsa.pub</code>文件，将它的内容拷贝到github里面。</p>
+<blockquote>
+<p>打开github页面：<a href="https://github.com/settings/profile" target="_blank" rel="external">https://github.com/settings/profile</a>，选择SSH Keys，然后点击Add SSH Key，把刚才ssh公钥id_rsa.pub（windows下的用户目录找到.ssh文件夹进去就可以看到）的内容paste进去。不需要填title，title会自动生成。</p>
+</blockquote>
+<p>之后进行测试链接</p>
+<pre><code>ssh git@github.com
+</code></pre><p>详细配置可参考：<a href="http://blog.csdn.net/hustpzb/article/details/8230454/" target="_blank" rel="external">http://blog.csdn.net/hustpzb/article/details/8230454/</a>。</p>
+<h2 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h2>
       
 
       
