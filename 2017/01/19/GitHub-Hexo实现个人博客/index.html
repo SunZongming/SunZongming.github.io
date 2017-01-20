@@ -19,7 +19,7 @@
 
 下面开始进行安装！">
 <meta property="og:image" content="http://ohm8no9mq.bkt.clouddn.com/hexo+gitHub.png">
-<meta property="og:updated_time" content="2017-01-19T07:55:01.878Z">
+<meta property="og:updated_time" content="2017-01-20T02:32:04.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo实现个人博客">
 <meta name="twitter:description" content="首先，感谢徐俊的博客，是他让我开始对本系统的探索，另外，感谢郭霖的推送。
@@ -183,10 +183,55 @@
 <p><img src="http://ohm8no9mq.bkt.clouddn.com/hexo+gitHub.png" alt="GitHub+HEXO"></p>
 <p>下面开始进行安装！</p>
 <a id="more"></a>
-<p>#准备工作：</p>
-<ol>
-<li>注册</li>
+<h1 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h1><h2 id="账号方面"><a href="#账号方面" class="headerlink" title="账号方面"></a>账号方面</h2><ol>
+<li>注册GitHub</li>
 </ol>
+<p>在GitHub.com上面注册一个账号，既然你能看到这篇博文，我想这就不是个问题了。</p>
+<h2 id="工具方面"><a href="#工具方面" class="headerlink" title="工具方面"></a>工具方面</h2><ol>
+<li>安装NodeJS和npm</li>
+<li>安装git</li>
+<li>通过npm安装hexo</li>
+</ol>
+<p>这两个可以说网上的教程很多，这里简单说一下：</p>
+<p>windows下可以通过可执行程序直接安装即可，安装后在cmd里面进行测试：</p>
+<pre><code>node -v
+</code></pre><p>输出NodeJS的版本号</p>
+<pre><code>npm -v
+</code></pre><p>输出npm包管理器的版本号</p>
+<p>因为npm的服务器在国外，所以访问速度是非常慢的<code>（当然，如果你有好用的梯子可以忽略我的那句话）</code>，为此，我们可以使用万能的淘宝的<a href="https://npm.taobao.org/" target="_blank" rel="external">cnpm</a>。</p>
+<blockquote>
+<p>这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</p>
+</blockquote>
+<p>###使用说明</p>
+<p>你可以使用我们定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
+<pre><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>或者你直接通过添加 npm 参数 alias 一个新命令:</p>
+<pre><code>alias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc&quot;
+
+# Or alias it in .bashrc or .zshrc
+$ echo &apos;\n#alias for cnpm\nalias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc&quot;&apos; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
+</code></pre><p>当你完成上面的操作之后，你就可以进行接下来的操作了，通过cnpm安装和hexo，命令如下：</p>
+<pre><code>npm install hexo-cli -g 
+全局安装hexo-cli
+
+hexo init blog
+初始化
+
+cd blog
+进入blog文件夹
+
+npm install
+会引导你创建一个package.json文件，包括名称、版本、作者这些信息等
+
+hexo server
+启动hexo本地服务，可打开localhost:3000 进行查看
+</code></pre><p>通过上面几步就可以在当前目录下生成一个文件夹blog，这个文件夹下面存放的就是hexo的工作文件。</p>
 
       
 
